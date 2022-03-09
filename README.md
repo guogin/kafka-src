@@ -28,9 +28,15 @@ Then, run this command to re-generate `gradle/wrapper/gradle-wrapper.jar`:
 $ gradle wrapper    # Because I have gradle version 7.4
                     # which is incompatible with the JAR file
 ```
+
 Then, run this command to build:
 ```shell
 $ ./gradlew jar -PscalaVersion=2.13.6
+```
+If I don't generate gradle wrapper, I will have errors like below:
+```shell
+Error: Could not find or load main class org.gradle.wrapper.GradleWrapperMain 
+    Caused by: java.lang.ClassNotFoundException: org.gradle.wrapper.GradleWrapperMain
 ```
 
 ### Build aggregated javadoc ###
