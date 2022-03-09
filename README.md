@@ -21,6 +21,18 @@ Follow instructions in https://kafka.apache.org/quickstart
 ### Build source jar ###
     ./gradlew srcJar
 
+### How I build it ###
+Make sure scala 2.13.6 is installed. It doesn't compile even if I installed scala 2.13.8.<br/>
+Then, run this command to re-generate `gradle/wrapper/gradle-wrapper.jar`:
+```shell
+$ gradle wrapper    # Because I have gradle version 7.4
+                    # which is incompatible with the JAR file
+```
+Then, run this command to build:
+```shell
+$ ./gradlew jar -PscalaVersion=2.13.6
+```
+
 ### Build aggregated javadoc ###
     ./gradlew aggregatedJavadoc
 
